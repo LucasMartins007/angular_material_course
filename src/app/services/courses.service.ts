@@ -22,7 +22,7 @@ export class CoursesService {
     findAllCourses(): Observable<Course[]> {
         return this.http.get('/api/courses')
             .pipe(
-                map(res => res['payload'])
+                map((res: any) => res['payload'])
             );
     }
 
@@ -33,7 +33,7 @@ export class CoursesService {
                 .set('pageNumber', "0")
                 .set('pageSize', "1000")
         }).pipe(
-            map(res =>  res["payload"])
+            map((res: any) =>  res["payload"])
         );
     }
 
@@ -49,7 +49,7 @@ export class CoursesService {
                 .set('pageSize', pageSize.toString())
                 .set('sortColumn', sortColumn)
         }).pipe(
-            map(res =>  res["payload"])
+            map((res: any) =>  res["payload"])
         );
     }
 
